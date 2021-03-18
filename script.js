@@ -47,7 +47,17 @@ if (isNaN(passwordLength) || 8 > passwordLength|| passwordLength > 128){
   alert("Invalid Input");
   return;
 } else {
-  alert(:"The number of characters is:" + passwordLength + ".")
+  alert("The number of characters is:" + passwordLength + ".")
 
 }
-let lowercase = confirm("Do you want to use lowercase letters?");
+// use confirm to get boolean value to get lowercase characters. 
+const lowercase = confirm("Do you want to use lowercase letters?");
+
+// use confirm to get boolean value to get lowercase characters. 
+const uppercase = confirm("Do you want to use uppercase letters?");
+
+// use confirm to get boolean value to get lowercase characters. 
+const numberChar = confirm("Do you want to use number?");
+
+// use confirm to get boolean value to get lowercase characters. 
+const specialChar = confirm("Do you want to use special characters?");
