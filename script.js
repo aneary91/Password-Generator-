@@ -1,5 +1,4 @@
 // // Assignment Code
-// var generateBtn = document.querySelector("#generate");
 
 // // Write password to the #password input
 // function writePassword() {
@@ -12,7 +11,6 @@
 // }
 
 // // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
 
 // Generator Functions
 
@@ -110,6 +108,16 @@ let specialCharacters = [
   ".",
 ];
 
+var generateBtn = document.querySelector("#generate");
+generateBtn.addEventListener("click", writePassword);
+
+function writePassword() {
+  var password = passwordGenerate();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+  return;
+}
 function passwordPrompt() {
   let passwordLength = parseInt(
     prompt(
@@ -157,23 +165,36 @@ function passwordPrompt() {
   return passwordInput;
 }
 
-let passwordObject = passwordPrompt();
-console.log(passwordObject);
+function passwordGenerate() {
+  let passwordObject = passwordPrompt();
+  console.log(passwordObject);
 
-let selectionArray = [];
-if (passwordObject.lowercase) {
-  selectionArray = selectionArray.concat(lowerCaseCharacters);
-}
-if (passwordObject.uppercase) {
-  selectionArray = selectionArray.concat(upperCaseCharacters);
-}
+  let selectionArray = [];
+  if (passwordObject.lowercase) {
+    selectionArray = selectionArray.concat(lowerCaseCharacters);
+  }
+  if (passwordObject.uppercase) {
+    selectionArray = selectionArray.concat(upperCaseCharacters);
+  }
 
-if (passwordObject.numberChar) {
-  selectionArray = selectionArray.concat(numberCharacters);
-}
+  if (passwordObject.numberChar) {
+    selectionArray = selectionArray.concat(numberCharacters);
+  }
 
-if (passwordObject.specialChar) {
-  selectionArray = selectionArray.concat(specialCharacters);
-}
+  if (passwordObject.specialChar) {
+    selectionArray = selectionArray.concat(specialCharacters);
+  }
 
-console.log(selectionArray);
+  console.log(selectionArray);
+
+  // generate password absed on what the use chooses.
+  let newPassword = "";
+  for (let i = 0; i < passwordObject.passwordLength; i++) {
+    newPassword =
+      newPassword +
+      selectionArray[Math.floor(Math.random() * selectionArray.length)];
+
+    console.log(newPassword);
+  }
+  return newPassword;
+}
