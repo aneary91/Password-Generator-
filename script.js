@@ -167,7 +167,6 @@ function passwordPrompt() {
 
 function passwordGenerate() {
   let passwordObject = passwordPrompt();
-  console.log(passwordObject);
 
   let selectionArray = [];
   if (passwordObject.lowercase) {
@@ -185,16 +184,12 @@ function passwordGenerate() {
     selectionArray = selectionArray.concat(specialCharacters);
   }
 
-  console.log(selectionArray);
-
   // generate password absed on what the use chooses.
   let newPassword = "";
   for (let i = 0; i < passwordObject.passwordLength; i++) {
     newPassword =
       newPassword +
       selectionArray[Math.floor(Math.random() * selectionArray.length)];
-
-    console.log(newPassword);
   }
   return newPassword;
 }
