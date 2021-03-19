@@ -1,25 +1,3 @@
-// // Assignment Code
-
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-//   "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"
-
-//   passwordText.value = password;
-
-// }
-
-// // Add event listener to generate button
-
-// Generator Functions
-
-// function getRandomLower() {
-//   return String.fromCharCode(97);
-
-// }
-
-// console.log(math.floor(math.random() * 26) + 97);
 
 let lowerCaseCharacters = [
   "a",
